@@ -3,6 +3,22 @@
     <title>Index Page</title>
     <script src="js/index.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="module">
+      import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
+      window.Stimulus = Application.start()
+
+      Stimulus.register("colour-changer", class extends Controller {
+        connect() {
+          console.log('A sprinkle of JS')
+        }
+
+        change() {
+          this.element.classList.add('text-blue-600')
+        }
+      })
+    </script>
+
   </head>
   <body class="">
     <div class="text-black bg-gray-200 px-10 mx-auto w-1/2 flex flex-col h-screen justify-evenly items-center">
@@ -20,6 +36,9 @@
         <turbo-frame id="eager_loaded" src="/pages/eager_loaded">
           <img src="Rhombus.gif">
         </turbo-frame>
+      </div>
+      <div data-controller="colour-changer">
+        <button data-action="colour-changer#change">Change my text colour to blue</button>
       </div>
     </div>
 
