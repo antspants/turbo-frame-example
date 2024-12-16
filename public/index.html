@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Index Page</title>
+    <script src="js/index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="">
+    <div class="text-black bg-gray-200 px-10 mx-auto w-1/2 flex flex-col h-screen justify-evenly items-center">
+      <div>
+        <turbo-frame id="about-me">
+          <a href="pages/about.html">About me</a>
+        </turbo-frame>
+      </div>
+      <div>
+        <turbo-frame id="comments">
+          <a href="pages/comments.html">Add a Comment</a>
+        </turbo-frame>
+      </div>
+      <div>
+        <turbo-frame id="eager_loaded" src="/pages/eager_loaded">
+          <img src="Rhombus.gif">
+        </turbo-frame>
+      </div>
+    </div>
+
+  </body>
+</html>
